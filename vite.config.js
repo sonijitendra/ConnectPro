@@ -4,23 +4,18 @@ import path from "path";
 import runtimeErrorModal from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
-  plugins: [
-    react(),
-
-    runtimeErrorModal(),
-  ],
+  plugins: [react(), runtimeErrorModal()],
   resolve: {
     alias: {
-      "@": path.resolve("client/src"),
+      "@": path.resolve("src"),
       "@shared": path.resolve("shared"),
-      "@assets": path.resolve("client/src/assets"),
+      "@assets": path.resolve("src/assets"),
     },
   },
-  root: path.resolve("client"),
   base: "/",
-  publicDir: path.resolve("client/public"),
+  publicDir: "public",
   build: {
-    outDir: path.resolve("dist"),
+    outDir: "dist",
     emptyOutDir: true,
   },
 });
